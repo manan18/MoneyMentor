@@ -6,11 +6,13 @@ body, html {
   
   * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
   .bg-image {
     /* The image used */
-    background-image: url("../static/img/car.jpg");
+    background-image: url("../static/img/ud1.jpg");
   
     /* Add the blur effect */
     filter: blur(0px);
@@ -53,7 +55,11 @@ body, html {
       padding-right: 10px;}
   
   .form-group input{
-      border-radius: 10px;}
+      border-radius: 2px;
+      outline: none;
+      border: none;
+      padding: 2px;
+    }
   
   .form-group placeholder{
       font-family: 'Titillium Web', sans-serif;

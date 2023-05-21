@@ -70,3 +70,7 @@ body, html {
   a:hover{
       color: mediumblue;
   }
+
+  #loginform{
+    font-family: sans-serif;
+  }

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body  %}
-<div class="bg-image"><img src="https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg" alt=""></div>
+<div class="bg-image"><img src="/static/img/ud1.jpg" height="1080px" width="1920px" alt=""></div>
 
 <div class="bg-text">
     <body class="bg-primary">
@@ -10,8 +10,8 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">MoneyMentor: Your Personal Finance Manager</h3></div>
+                                <div class="card shadow-lg border-0 rounded-lg mt-5" style="font-family: sans-serif;">
+                                    <div class="card-header"><h1 class="text-center font-weight-light my-4">MoneyMentor: Your Personal Finance Manager</h1></div>
                                     <div class="card-body">
                                         <form action='/handlelogin/' method='post'>
                                         {% csrf_token %}

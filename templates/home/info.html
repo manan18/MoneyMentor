@@ -18,7 +18,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="/index">Start Bootstrap</a>
-            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+            <!-- <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button> -->
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             {% csrf_token %} 
@@ -52,22 +52,22 @@
 													<div>
 													<a class="nav-link" href="/profile">
 														<i class="glyphicon glyphicon-user"></i>
-															  PROFILE</a>
+															  Profile</a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
         
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                RECORD
+                                Record
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link " href="/weekly">
-                                       WEEKLY RECORD
+                                       Weekly Record
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <a class="nav-link " href="/stats" > 
-                                       MONTHLY RECORD
+                                       Monthly Record
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="dropdown show">
@@ -83,7 +83,7 @@
                             </a>
                             <a class="nav-link" href="/tables">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                HISTORY
+                                History
                             </a>
 
                     </div>

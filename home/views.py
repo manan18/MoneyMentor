@@ -33,6 +33,8 @@ def index(request):
     return redirect('home')
     #return HttpResponse('This is blog')
 def register(request):
+    if request.method == "POST":
+        handleSignup(request)
     return render(request,'home/register.html')
     #return HttpResponse('This is blog')
 def password(request):
@@ -64,7 +66,7 @@ def addmoney(request):
 def profile(request):
     if request.session.has_key('is_logged'):
         return render(request,'home/profile.html')
-    return redirect('/home')
+    return redirect('home')
 
 def profile_edit(request,id):
     if request.session.has_key('is_logged'):
@@ -72,7 +74,7 @@ def profile_edit(request,id):
         # user_id = request.session["user_id"]
         # user1 = User.objects.get(id=user_id)
         return render(request,'home/profile_edit.html',{'add':add})
-    return redirect("/home")
+    return redirect('home')
 
 def profile_update(request,id):
     if request.session.has_key('is_logged'):
@@ -87,7 +89,7 @@ def profile_update(request,id):
             user.userprofile.save()
             user.save()
             return redirect("/profile")
-    return redirect("/home")   
+    return redirect('home')   
 
 def handleSignup(request):
     if request.method =='POST':
@@ -126,10 +128,8 @@ def handleSignup(request):
             user.first_name=fname
             user.last_name=lname
             user.email = email
-            # profile = UserProfile.objects.all()
-
             user.save()
-            # p1=profile.save(commit=False)
+            # p1 = profile.save(commit=False)
             profile.user = user
             profile.save()
             messages.success(request," Your account has been successfully created")

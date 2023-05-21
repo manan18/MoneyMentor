@@ -35,7 +35,7 @@ class Addmoney_info(models.Model):
         
 class UserProfile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
-    profession = models.CharField(max_length = 10, choices=PROFESSION_CHOICES)
+    profession = models.CharField(max_length = 10, choices=PROFESSION_CHOICES, blank=True)
     Savings = models.IntegerField( null=True, blank=True)
     income = models.BigIntegerField(null=True, blank=True)
     image = models.ImageField(upload_to='profile_image',blank=True)

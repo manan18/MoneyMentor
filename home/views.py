@@ -37,8 +37,8 @@ def register(request):
         handleSignup(request)
     return render(request,'home/register.html')
     #return HttpResponse('This is blog')
-def password(request):
-    return render(request,'home/password.html')
+# def password(request):
+#     return render(request,'home/password.html')
 
 def charts(request):
     return render(request,'home/charts.html')
@@ -272,6 +272,7 @@ def expense_week(request):
     user1 = User.objects.get(id=user_id)
     addmoney = Addmoney_info.objects.filter(user = user1,Date__gte=one_week_ago,Date__lte=todays_date)
     finalrep ={}
+    finalrep1 ={}
 
     def get_Category(addmoney_info):
         return addmoney_info.Category
@@ -279,17 +280,27 @@ def expense_week(request):
 
 
     def get_expense_category_amount(Category,add_money):
-        quantity = 0 
-        filtered_by_category = addmoney.filter(Category = Category,add_money="Expense") 
+        quantity = 0
+        filtered_by_category = addmoney.filter(Category = Category,add_money="Expense")
         for item in filtered_by_category:
             quantity+=item.quantity
         return quantity
 
+
+    def get_expense_category(Category,add_money):
+        typeofexpense = []
+        filtered_by_category = addmoney.filter(Category = Category,add_money="Expense")
+        for item in filtered_by_category:
+            typeofexpense.append(item.quantity)
+        return typeofexpense
     for x in addmoney:
         for y in Category_list:
             finalrep[y]= get_expense_category_amount(y,"Expense")
+            finalrep1[y]= get_expense_category(y,"Expense")
+            
+    
 
-    return JsonResponse({'expense_category_data': finalrep}, safe=False)
+    return JsonResponse({'expense_category_data': finalrep, 'expense_category': finalrep1}, safe=False )
     
 def weekly(request):
     if request.session.has_key('is_logged') :

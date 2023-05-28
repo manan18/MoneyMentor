@@ -272,6 +272,7 @@ def expense_week(request):
     user1 = User.objects.get(id=user_id)
     addmoney = Addmoney_info.objects.filter(user = user1,Date__gte=one_week_ago,Date__lte=todays_date)
     finalrep ={}
+    # Stores Line Chart Data
     finalrep1 ={}
 
     def get_Category(addmoney_info):

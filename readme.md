@@ -11,4 +11,4 @@ Step 3: Fire up the project by typing python manage.py migrate
 Step 4: Follow the instructions on the website.
 
 
-Enjoy Your Savings!s
+Enjoy Your Savings!
